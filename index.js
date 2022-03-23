@@ -17,6 +17,22 @@ app.listen(port, () => {
 
 // Generic Hello World Fxn
 // localhost:8888
+app.get('/echo', (req, res) => {
+console.log(req)
+//  console.log("BODY: " + JSON.parse(req.body))
+  //console.log("QUERY: " + JSON.parse(req.query))
+ // console.log("PARAMS: " + JSON.parse(req.params))
+ // console.log("URL: " + JSON.parse(req.url))
+  res.send(req.body)
+})
+
+app.post('/echo', (req, res) => {
+  console.log("POST" + req)
+  res.send(req.body)
+})
+
+
+
 app.post('/', (req, res) => {
   console.log(req)
 
